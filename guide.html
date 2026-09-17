@@ -1,52 +1,854 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>담길 위치기반 서비스 이용약관</title>
-<style>
-  :root { color-scheme: light; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-         line-height: 1.7; color: #222; max-width: 760px; margin: 0 auto; padding: 24px 18px 64px; background:#fff; }
-  h1 { font-size: 1.5rem; border-bottom: 2px solid #222; padding-bottom: 12px; }
-  h2 { font-size: 1.1rem; margin-top: 2em; }
-  p, li { font-size: 0.95rem; }
-  ol, ul { padding-left: 1.4em; }
-  .meta { color:#666; font-size:0.85rem; margin-top:2.5em; }
-</style>
-</head>
-<body>
-<h1>위치기반 서비스 이용약관</h1>
-<p>본 약관은 담길(이하 '회사')가 제공하는 위치기반서비스와 관련하여 회사와 개인위치정보주체(이하 '이용자')와의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
-<h2>제1조 (목적)</h2>
-<p>본 약관은 담길(이하 '회사')가 제공하는 위치기반서비스와 관련하여 회사와 개인위치정보주체(이하 '이용자')와의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
-<h2>제2조 (서비스 내용 및 요금)</h2>
-<ol>
-<li><strong>서비스 내용</strong>
-<ul>
-<li><strong>여행 타임라인 자동 기록:</strong> 사용자가 "여행 기록 Start" 버튼을 누른 시점부터 "End" 버튼을 누를 때까지의 위치 이동 경로를 기록하여 여행 일지로 구조화합니다.</li>
-<li><strong>주변 관광지 매칭 및 추천:</strong> 이용자의 현재 위치 좌표를 기반으로 한국관광공사 OpenAPI와 연동하여 인근 관광지, 맛집, 축제 정보를 자동 매칭 및 추천합니다.</li>
-<li><strong>지도 및 길찾기 연동:</strong> 카카오 지도 API를 활용하여 추천 장소의 위치 표시 및 이동 동선 길찾기 기능을 제공합니다.</li>
-</ul></li>
-<li><strong>이용 요금:</strong> 서비스는 무료로 제공됩니다. (단, 데이터 통신료는 이용자가 부담합니다.)</li>
-</ol>
-<h2>제3조 (개인위치정보의 수집 및 보유 기간)</h2>
-<ol>
-<li>회사는 이용자가 앱 내에서 "여행 기록 Start"를 선택하여 세션을 활성화한 기간 동안에만 이용자의 위치 정보를 수집합니다. 이용자가 "End"를 누르거나 앱 설정에서 위치 권한을 거부할 경우 실시간 위치 수집은 즉시 중단됩니다.</li>
-<li>회사는 위치기반서비스 제공 및 이용자의 여행 타임라인 생성을 위해 위치정보를 처리하며, 목적 달성 시 즉시 파기합니다. 단, 이용자의 여행 일지 보관 및 관련 법령 규정에 따라 위치정보 이용·제공사실 확인자료는 <strong>최대 3개월간</strong> 보관합니다.</li>
-</ol>
-<h2>제4조 (개인위치정보주체의 권리)</h2>
-<ol>
-<li>이용자는 언제든지 위치정보 수집·이용·제공에 대한 동의의 전부 또는 일부를 철회할 수 있습니다.</li>
-<li>이용자는 언제든지 본인의 위치정보 수집·이용·제공 사실 확인자료의 열람 및 고지, 오류 정정을 요구할 수 있습니다.</li>
-<li>이용자는 스마트폰 OS 설정 및 앱 내 설정을 통해 위치정보 수집 권한을 직접 거부하거나 개별 타임라인의 위치 데이터를 삭제할 수 있습니다. 위치정보 제공은 선택 사항이며, 동의하지 않아도 위치 기반 외 기본 서비스는 정상 이용 가능합니다.</li>
-</ol>
-<h2>제5조 (위치정보 관리책임자)</h2>
-<ul>
-<li>성명/직책: 이유민 / 위치정보 관리책임자</li>
-<li>이메일: kimjungminlove@naver.com</li>
-<li>주소: 경기도 안산시 상록구 한양대학로 55</li>
-</ul>
-<p class="meta">시행일자: 2026년 9월 8일</p>
-</body>
-</html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>담길 사용 가이드</title><meta name="data-notion-page-icon" content="📖"/><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%93%96%3C%2Ftext%3E%3C%2Fsvg%3E"/><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="402dd759-0914-82ba-9c28-01134f80a09a" class="page sans" data-notion-page-icon="📖"><header><div class="page-header-icon undefined"><span class="icon" data-emoji="📖"></span></div><h1 class="page-title" dir="auto">담길 사용 가이드</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><h4 id="6f2dd759-0914-825e-ba62-8117b7bccded" class="" dir="auto">여행을 기록하고, 다른 사람의 여행에서 다음 여행을 발견해보세요 :)</h4><ul id="953dd759-0914-8207-9b0b-81db7ae0e890" class="bulleted-list" dir="auto"><li style="list-style-type:disc">담길은 여행 중 사진과 장소를 기록해 나만의 여행 다이어리를 만들고, 다른 여행자가 남긴 다이어리와 실제 방문 장소를 통해 새로운 여행을 탐색할 수 있는 <mark class="highlight-blue" data-notion-highlight="blue">여행 기록 서비스</mark>입니다.</li></ul><p id="332dd759-0914-8261-9eea-8114b1d05219" class="" dir="auto">
+</p><ul id="5bfdd759-0914-835f-835a-017ffc16c26f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">담길의 주요 기능별 사용 방법을 안내해드려요.</li></ul><ul id="29edd759-0914-8225-8637-01d0a2d61d61" class="bulleted-list" dir="auto"><li style="list-style-type:disc">궁금한 기능의 카테고리를 선택해 확인해보세요.</li></ul><p id="307dd759-0914-83e6-8d7a-0131ccd514a1" class="" dir="auto">
+</p><hr id="4b3dd759-0914-8349-a869-011596320e66" dir="auto"/><p id="005dd759-0914-8383-81b2-811a46f73996" class="" dir="auto">
+</p><details id="b11dd759-0914-83a6-8472-81ac010ac33e" open="" class="toggle" dir="auto"><summary>여행 다이어리</summary><div class="indented"><p id="913dd759-0914-8206-a79a-81c2328f2c65" class="" dir="auto">담길의 가장 핵심적인 기능으로, 여행을 시작하고 여행 중의 순간과 장소를 기록한 뒤 <mark class="highlight-blue" data-notion-highlight="blue">하나의 여행 다이어리로 완성</mark>할 수 있어요.</p><details id="9aedd759-0914-837d-88f6-019830b06cd5" open="" class="toggle" dir="auto"><summary>여행 시작하기</summary><div class="indented"><ol type="1" id="3f9dd759-0914-8346-8655-0108288e5bb7" class="numbered-list" start="1" dir="auto"><li>홈 화면에서 <mark class="highlight-blue" data-notion-highlight="blue">[ start ] 버튼</mark>을 선택해주세요.</li></ol><ol type="1" id="7b1dd759-0914-8395-bf5b-818c5f5361e9" class="numbered-list" start="2" dir="auto"><li>새로운 여행에 대한 다이어리 제목 및 여행지를 입력해주세요.</li></ol><ol type="1" id="5a7dd759-0914-83d8-b058-812e6e0b635b" class="numbered-list" start="3" dir="auto"><li>다이어리가 생성되면 여행 기록을 시작할 수 있어요.</li></ol><ol type="1" id="933dd759-0914-825d-a5df-81c4c3bb10c8" class="numbered-list" start="4" dir="auto"><li>여행이 진행되는 동안 사진이나 영상을 촬영하여 여행의 순간을 남겨주세요.</li></ol><ol type="1" id="d86dd759-0914-834e-9863-818618258977" class="numbered-list" start="5" dir="auto"><li>여행을 종료하기 전까지 촬영한 기록은 하나의 여행 안에 계속 저장돼요.</li></ol><p id="7c2dd759-0914-82ca-9ed1-81f8f7113df2" class="" dir="auto">
+</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="159dd759-0914-82bf-865f-015079c8a56d" dir="ltr"><div style="width:100%"><p id="8f6dd759-0914-8329-ac81-812c57331ffd" class="" dir="auto">💡 여행 기록에는 사진/영상뿐만 아니라 촬영 시간과 장소 정보로 함께 활용돼요 !</p></div></aside><p id="454dd759-0914-82a6-ae6d-01eef0746312" class="" dir="auto">
+</p></div></details><details id="c8bdd759-0914-8293-a1f9-8143ed676392" open="" class="toggle" dir="auto"><summary>여행 기록하기</summary><div class="indented"><ol type="1" id="465dd759-0914-83b3-9a7c-015824a5bd58" class="numbered-list" start="1" dir="auto"><li>여행이 시작된 상태에서 다이어리를 눌러 <mark class="highlight-blue" data-notion-highlight="blue">[ 사진 찍기 ]</mark>을 선택해 주세요.</li></ol><ol type="1" id="d38dd759-0914-82cf-bf16-81442a9ad89e" class="numbered-list" start="2" dir="auto"><li>남기고 싶은 여행 순간을 사진 또는 영상으로 촬영해 주세요.</li></ol><ol type="1" id="3bbdd759-0914-82a8-933b-018029cfef61" class="numbered-list" start="3" dir="auto"><li>촬영이 완료되면 현재 위치를 기반으로 장소 정보를 확인해 주세요.</li></ol><ol type="1" id="5f5dd759-0914-83df-a7f2-8128bbcdd050" class="numbered-list" start="4" dir="auto"><li>표시된 장소가 실제 방문 장소와 다르다면 올바른 장소로 수정할 수 있어요.</li></ol><ol type="1" id="90cdd759-0914-83c7-bf6e-81eef6a80848" class="numbered-list" start="5" dir="auto"><li>장소를 확인한 후 <mark class="highlight-blue" data-notion-highlight="blue">[ 확인 ]</mark> 버튼을 눌러 기록을 저장해 주세요.</li></ol><ol type="1" id="1eddd759-0914-8286-96dc-019d0ad39b7b" class="numbered-list" start="6" dir="auto"><li>여행 중 같은 방법으로 여러 개의 기록을 계속 추가할 수 있어요.</li></ol><p id="44bdd759-0914-8226-aa35-816394e5e55b" class="" dir="auto">
+</p><p id="472dd759-0914-83aa-be07-81c6be3d1681" class="" dir="auto">[ 기록되는 정보 ]</p><ul id="76ddd759-0914-836b-9b03-01aaefd3e685" class="bulleted-list" dir="auto"><li style="list-style-type:disc">사진 or 영상</li></ul><ul id="48bdd759-0914-834c-b8ae-01ee30e704f1" class="bulleted-list" dir="auto"><li style="list-style-type:disc">촬영 시간</li></ul><ul id="4dfdd759-0914-8263-8cdf-0113cd407b6d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">방문 장소</li></ul><p id="faedd759-0914-8378-b967-0118034fa02b" class="" dir="auto">→ 이 정보들은 여행 종료 후 다이어리를 구성할 때 사용돼요.</p><p id="657dd759-0914-837e-95ec-01fa620dcc22" class="" dir="auto">
+</p></div></details><details id="3d7dd759-0914-8297-86f6-81194b05ecaa" open="" class="toggle" dir="auto"><summary>여행 다이어리 완성하기</summary><div class="indented"><ol type="1" id="e5bdd759-0914-828a-bc28-0166d6a0fe47" class="numbered-list" start="1" dir="auto"><li>여행이 끝나면 <mark class="highlight-blue" data-notion-highlight="blue">[ 여행 종료 ]</mark>를 선택해 주세요.</li></ol><ol type="1" id="18add759-0914-82a8-a279-81e29d4bbdb9" class="numbered-list" start="2" dir="auto"><li>여행 중 저장한 사진/영상과 장소 기록을 확인해 주세요.</li></ol><ol type="1" id="60edd759-0914-8398-b149-01324a9f8a54" class="numbered-list" start="3" dir="auto"><li>다이어리의 <mark class="highlight-blue" data-notion-highlight="blue">표지</mark>를 원하는 스타일로 꾸며주세요.</li></ol><ol type="1" id="b77dd759-0914-82d3-a3f4-0104a5bf6e64" class="numbered-list" start="4" dir="auto"><li>사진, 문장, 스티커 등을 이용해 다이어리 내부를 꾸밀 수 있어요.</li></ol><ol type="1" id="b8add759-0914-82d3-aa88-016d8bdc6f3d" class="numbered-list" start="5" dir="auto"><li>완성된 내용을 확인한 뒤 다이어리의 <mark class="highlight-blue" data-notion-highlight="blue">공개 / 비공개 여부</mark>를 설정해 주세요.</li></ol><ol type="1" id="958dd759-0914-8397-96f1-819d57a8f3ee" class="numbered-list" start="6" dir="auto"><li>저장하면 하나의 여행 다이어리가 완성돼요.</li></ol></div></details><p id="715dd759-0914-8362-a47b-01b599407602" class="" dir="auto">
+</p></div></details><details id="9dbdd759-0914-8392-a2f2-81152a74b8e4" open="" class="toggle" dir="auto"><summary>🔍 검색</summary><div class="indented"><p id="a83dd759-0914-8216-a5cd-810408f9fb34" class="" dir="auto">검색 화면에서는 원하는 지역의 <mark class="highlight-blue" data-notion-highlight="blue">축제/행사 정보, 다른 사용자의 여행 기록을 조건에 맞게 탐색</mark>할 수 있어요.</p><details id="e4cdd759-0914-8310-942f-811e9a861010" open="" class="toggle" dir="auto"><summary>지역 검색하기</summary><div class="indented"><p id="156dd759-0914-823d-8c9a-811fac21601f" class="" dir="auto">여행하고 싶은 지역을 검색하면 해당 지역과 관련된 <mark class="highlight-blue" data-notion-highlight="blue">여행 정보를 한 번에 확인</mark>할 수 있어요.</p><p id="359dd759-0914-83f5-b40a-81b2a56c0ba9" class="" dir="auto">
+</p><ol type="1" id="d07dd759-0914-833e-9760-013b0c560289" class="numbered-list" start="1" dir="auto"><li>하단 네비게이션 바에서 <mark class="highlight-blue" data-notion-highlight="blue">[</mark> <mark class="highlight-blue" data-notion-highlight="blue">검색 ]</mark>을 선택해 주세요.</li></ol><ol type="1" id="2f4dd759-0914-83a9-a133-0139b0da36cb" class="numbered-list" start="2" dir="auto"><li>상단 검색창에 궁금한 <mark class="highlight-blue" data-notion-highlight="blue">지역명</mark>을 입력해 주세요.</li></ol><ol type="1" id="efadd759-0914-83b2-b8a0-81935ac016ed" class="numbered-list" start="3" dir="auto"><li>검색 결과에서 원하는 지역을 선택해 주세요.</li></ol><ol type="1" id="ba8dd759-0914-82d6-89e9-81f6ecaa1326" class="numbered-list" start="4" dir="auto"><li>해당 지역과 관련된 정보를 확인할 수 있어요.</li></ol><ol type="1" id="0c0dd759-0914-832f-825c-0189f362019f" class="numbered-list" start="5" dir="auto"><li>지역과 관련된 축제/행사와 다른 사용자의 여행 다이어리도 함께 탐색할 수 있어요.</li></ol><p id="d2add759-0914-8391-a115-018afccfbf01" class="" dir="auto">
+</p><p id="e66dd759-0914-8344-be9d-812deaf23658" class="" dir="auto">[ 확인할 수 있는 정보 ]</p><ul id="06edd759-0914-831c-ba1c-81a8b90a4f0e" class="bulleted-list" dir="auto"><li style="list-style-type:disc">지역 관련 정보</li></ul><ul id="240dd759-0914-82f5-9de6-012b16e7f55d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">해당 지역의 축제/행사</li></ul><ul id="533dd759-0914-8376-8fa0-81bbbb0d5d07" class="bulleted-list" dir="auto"><li style="list-style-type:disc">해당 지역을 여행한 사용자의 다이어리</li></ul><p id="ee0dd759-0914-8385-9cff-81bf970c177f" class="" dir="auto">
+</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="b60dd759-0914-820c-86f0-81d5b5fe96f2" dir="ltr"><div style="width:100%"><p id="86ddd759-0914-82ea-9d78-81373f4820e4" class="" dir="auto"><strong>💡 </strong>여행지는 정했지만 어디를 방문해야 할지 모르겠다면 지역을 먼저 검색한 뒤, 해당 지역의 축제/행사와 다른 여행자의 다이어리를 함께 참고하여 여행 계획을 세울 수 있어요 !</p></div></aside><p id="c30dd759-0914-83ab-8a7a-01b4d5b3bbe3" class="" dir="auto">
+</p></div></details><details id="c91dd759-0914-83d5-9b7b-8196bae41560" open="" class="toggle" dir="auto"><summary>축제/행사 찾아보기</summary><div class="indented"><p id="6f9dd759-0914-8314-9981-81026c307f3a" class="" dir="auto">여행 중 방문할 수 있는 축제와 행사 정보를 검색하고<mark class="highlight-blue" data-notion-highlight="blue"> 원하는 조건에 맞게 확인</mark>할 수 있어요.</p><p id="b1ddd759-0914-8270-8c79-0195b6567850" class="" dir="auto">
+</p><ol type="1" id="8fddd759-0914-8206-a8d3-01ea9e42b3bf" class="numbered-list" start="1" dir="auto"><li>검색 화면에서 <mark class="highlight-blue" data-notion-highlight="blue">[</mark> <mark class="highlight-blue" data-notion-highlight="blue">축제/행사 ]</mark>를 선택해 주세요.</li></ol><ol type="1" id="087dd759-0914-83e9-b8ac-0112ebbfe2d0" class="numbered-list" start="2" dir="auto"><li>현재 제공되는 축제/행사 목록을 확인해 주세요.</li></ol><ol type="1" id="409dd759-0914-8341-aebe-81ec7fcb232b" class="numbered-list" start="3" dir="auto"><li>원하는 조건에 맞춰 필터를 설정해 주세요.</li></ol><ol type="1" id="843dd759-0914-83ff-afdc-0130dc3545d6" class="numbered-list" start="4" dir="auto"><li>필터가 적용된 축제/행사 목록에서 관심 있는 항목을 선택해 주세요.</li></ol><ol type="1" id="fd5dd759-0914-831d-af1b-018acc19b698" class="numbered-list" start="5" dir="auto"><li>선택한 축제/행사의 상세정보를 확인할 수 있어요.<figure id="004dd759-0914-825d-adae-812a92ec4601" class="image" data-notion-image="%EB%8B%B4%EA%B8%B8%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C/Group_3414.png" dir="ltr"><a href="%EB%8B%B4%EA%B8%B8%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C/Group_3414.png"><img style="width:628.0324096679688px" src="%EB%8B%B4%EA%B8%B8%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C/Group_3414.png"/></a></figure></li></ol></div></details><details id="af0dd759-0914-8345-97ae-815967f030ab" open="" class="toggle" dir="auto"><summary>축제/행사 필터 사용하기</summary><div class="indented"><p id="0b8dd759-0914-8395-9bd9-815b2b9de422" class="" dir="auto">많은 축제와 행사 중 <mark class="highlight-blue" data-notion-highlight="blue">원하는 정보만 빠르게 찾을 수 있도록 필터를 사용</mark>할 수 있어요.</p><p id="1a4dd759-0914-83d9-a71e-019d76a8f7d1" class="" dir="auto">
+</p><ol type="1" id="67ddd759-0914-826b-b4d8-8196abed7ac5" class="numbered-list" start="1" dir="auto"><li>축제·행사 화면에서 <mark class="highlight-blue" data-notion-highlight="blue">필터</mark>를 선택해 주세요.</li></ol><ol type="1" id="277dd759-0914-8366-98d0-81ef1051863b" class="numbered-list" start="2" dir="auto"><li>원하는 <mark class="highlight-blue" data-notion-highlight="blue">지역 또는 제공되는 조건</mark>을 선택해 주세요.</li></ol><ol type="1" id="684dd759-0914-82db-a7e7-818a758014ad" class="numbered-list" start="3" dir="auto"><li>필터를 적용해 주세요.</li></ol><ol type="1" id="1c0dd759-0914-83b2-b17f-8132fff95abd" class="numbered-list" start="4" dir="auto"><li>선택한 조건에 맞는 축제·행사만 확인할 수 있어요.</li></ol><ol type="1" id="05bdd759-0914-82c8-a79d-010d9527367f" class="numbered-list" start="5" dir="auto"><li>조건을 변경하거나 초기화하면 다시 전체 목록을 탐색할 수 있어요.</li></ol><p id="863dd759-0914-8209-b85d-81acd867e086" class="" dir="auto">
+</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="512dd759-0914-8337-a1a0-81cc0cb983e2" dir="ltr"><div style="width:100%"><p id="a58dd759-0914-8370-91d5-01eefdd05b71" class="" dir="auto">💡 여행 지역이 정해져 있다면 해당 지역으로 필터링하여 여행 일정에 함께 방문할 수 있는 축제와 행사를 확인해보세요 !</p></div></aside><figure id="5aadd759-0914-82c0-a962-81692495e6ae" class="image" data-notion-image="%EB%8B%B4%EA%B8%B8%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C/Group_3415.png" dir="ltr"><a href="%EB%8B%B4%EA%B8%B8%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C/Group_3415.png"><img style="width:628.0324096679688px" src="%EB%8B%B4%EA%B8%B8%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C/Group_3415.png"/></a></figure></div></details><details id="9abdd759-0914-8239-b191-0102012fc9dd" open="" class="toggle" dir="auto"><summary>사용자 검색하기</summary><div class="indented"><p id="317dd759-0914-82f7-af5c-019f2f9a34dd" class="" dir="auto">담길을 이용하는 다른 사용자를 검색하고 해당 사용자가 <mark class="highlight-blue" data-notion-highlight="blue">공개한 여행 기록을 확인</mark>할 수 있어요.</p><p id="cf8dd759-0914-83f9-8770-81233c90b17b" class="" dir="auto">
+</p><ol type="1" id="d67dd759-0914-82d9-8adc-817f1cc8e656" class="numbered-list" start="1" dir="auto"><li>검색 화면의 상단 검색창에 찾고 싶은 <mark class="highlight-blue" data-notion-highlight="blue">사용자 이름</mark>을 입력해 주세요.</li></ol><ol type="1" id="230dd759-0914-8376-a5d4-81d37096f673" class="numbered-list" start="2" dir="auto"><li>검색 결과에서 원하는 사용자를 선택해 주세요.</li></ol><ol type="1" id="6d6dd759-0914-8391-925d-81fe7514f41b" class="numbered-list" start="3" dir="auto"><li>해당 사용자의 프로필로 이동해 주세요.</li></ol><ol type="1" id="cf8dd759-0914-835f-8a62-8163540e8981" class="numbered-list" start="4" dir="auto"><li>사용자가 공개한 여행 다이어리를 확인할 수 있어요.</li></ol><ol type="1" id="7a0dd759-0914-8397-be79-816f52be0f3b" class="numbered-list" start="5" dir="auto"><li>관심 있는 다이어리를 선택해 실제 여행 기록을 둘러볼 수 있어요.</li></ol><p id="b06dd759-0914-830f-9103-016a96a159b4" class="" dir="auto">
+</p><ul id="9ccdd759-0914-832d-b96b-01fc88232168" class="bulleted-list" dir="auto"><li style="list-style-type:disc">사용자 프로필에서는 해당 사용자가 기록한 여행 다이어리를 확인할 수 있어요.</li></ul><p id="84cdd759-0914-82e5-b2be-01daec24e473" class="" dir="auto">
+</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="d15dd759-0914-831e-a371-01319a5e5d97" dir="ltr"><div style="width:100%"><p id="f49dd759-0914-825d-81ce-8183e68a06e0" class="" dir="auto">💡 여행 스타일이나 취향이 비슷한 사용자를 발견했다면 해당 사용자의 다른 다이어리도 둘러보며 다음 여행을 준비할 때 참고해보세요 !</p></div></aside></div></details><p id="671dd759-0914-8363-9253-810152050721" class="" dir="auto">
+</p></div></details><details id="9d8dd759-0914-835a-968e-81b40f71c3f4" open="" class="toggle" dir="auto"><summary>📍 지도</summary><div class="indented"><p id="85fdd759-0914-83ad-90c6-81911293ab75" class="" dir="auto">지도에서는 <mark class="highlight-blue" data-notion-highlight="blue">방문하고 싶은 장소를 검색</mark>하고, <mark class="highlight-blue" data-notion-highlight="blue">장소 정보와 실제 방문자의 여행 다이어리를 확인</mark>한 뒤 <mark class="highlight-blue" data-notion-highlight="blue">관심 장소로 저장</mark>할 수 있어요.</p><details id="306dd759-0914-83f9-99ff-017185ce1b8f" open="" class="toggle" dir="auto"><summary>장소 검색하기</summary><div class="indented"><p id="c0fdd759-0914-82aa-9afd-81e61989115c" class="" dir="auto">방문하고 싶은 관광지, 음식점, 카페 등 <mark class="highlight-blue" data-notion-highlight="blue">원하는 장소를 검색</mark>해보세요.</p><p id="c99dd759-0914-83fc-ad35-0189ce1a6712" class="" dir="auto">
+</p><ol type="1" id="ebbdd759-0914-83bf-84ba-810265311bb0" class="numbered-list" start="1" dir="auto"><li>하단 네비게이션 바에서 <mark class="highlight-blue" data-notion-highlight="blue">지도</mark>를 선택해 주세요.</li></ol><ol type="1" id="9eadd759-0914-83e0-abac-014ad48a049d" class="numbered-list" start="2" dir="auto"><li>지도 상단의 <mark class="highlight-blue" data-notion-highlight="blue">검색창</mark>을 선택해 주세요.</li></ol><ol type="1" id="6f1dd759-0914-823b-914c-81bcfafd74a3" class="numbered-list" start="3" dir="auto"><li>찾고 싶은 장소명을 입력해 주세요.</li></ol><ol type="1" id="3a0dd759-0914-8348-bd1d-0164735ef8e3" class="numbered-list" start="4" dir="auto"><li>검색 결과에서 원하는 장소를 선택해 주세요.</li></ol><ol type="1" id="a74dd759-0914-833f-a199-81fbc8223b0b" class="numbered-list" start="5" dir="auto"><li>선택한 장소의 위치가 지도에 표시돼요.</li></ol><p id="5a7dd759-0914-83eb-bf83-01c21389b1d2" class="" dir="auto">
+</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="44fdd759-0914-821e-9ed9-0194d0d1883f" dir="ltr"><div style="width:100%"><p id="858dd759-0914-82e0-8b04-8189c75b244a" class="" dir="auto"><strong>💡 </strong>검색 화면과 무엇이 다른가요?</p><p id="6c6dd759-0914-83f1-88f8-01097b4a656b" class="" dir="auto">검색 메뉴가 축제/행사 등 여행 콘텐츠와 정보를 탐색하는 공간이라면, 지도 검색은 실제로 방문할 장소를 찾는 기능이에요.</p></div></aside><p id="c33dd759-0914-83a4-b6cf-01ab293b66d2" class="" dir="auto">
+</p></div></details><details id="823dd759-0914-828c-b8b3-015a797102ea" open="" class="toggle" dir="auto"><summary>장소 상세 정보 확인하기</summary><div class="indented"><p id="07add759-0914-829a-8b11-81360ad2bb77" class="" dir="auto">지도에서 관심 있는 장소를 선택하면 <mark class="highlight-blue" data-notion-highlight="blue">해당 장소와 관련된 정보를 확인</mark>할 수 있어요.</p><p id="476dd759-0914-83a0-a9e0-815ec9a1f9f8" class="" dir="auto">
+</p><ol type="1" id="979dd759-0914-8265-9f47-01749d5ad6a6" class="numbered-list" start="1" dir="auto"><li>지도에서 원하는 <mark class="highlight-blue" data-notion-highlight="blue">장소 마커</mark>를 선택해 주세요.</li></ol><ol type="1" id="8bedd759-0914-82d0-9720-81d7caf12040" class="numbered-list" start="2" dir="auto"><li>선택한 장소의 상세정보를 확인해 주세요.</li></ol><ol type="1" id="619dd759-0914-82e7-8867-81319f1b54cf" class="numbered-list" start="3" dir="auto"><li>장소의 기본정보와 운영정보 등을 확인할 수 있어요.</li></ol><ol type="1" id="d17dd759-0914-8399-89a6-8108a9c2f853" class="numbered-list" start="4" dir="auto"><li>해당 장소를 방문한 사용자의 다이어리가 있다면 <mark class="highlight-blue" data-notion-highlight="blue">관련 다이어리</mark>도 함께 확인할 수 있어요.</li></ol><ol type="1" id="4f9dd759-0914-82d6-baa2-0147aa018e60" class="numbered-list" start="5" dir="auto"><li>관련 다이어리를 선택하면 실제 방문자가 해당 장소를 어떤 여행에서 방문했는지 참고할 수 있어요.</li></ol><p id="0f1dd759-0914-8343-9a92-818bf76be69d" class="" dir="auto">→ 장소의 기본적인 정보뿐만 아니라<mark class="highlight-blue" data-notion-highlight="blue"> 실제 사용자의 여행 경험까지 함께 확인</mark>할 수 있어요.</p><p id="11fdd759-0914-8202-b750-01a94c5e5979" class="" dir="auto">
+</p></div></details><details id="571dd759-0914-832c-ac4c-817b049dc3ee" open="" class="toggle" dir="auto"><summary>관심 장소 찜하기</summary><div class="indented"><p id="84add759-0914-82f1-a5f3-8154dccea316" class="" dir="auto">다음 여행에서 방문하고 싶은 장소가 있다면 찜해두세요.</p><p id="4b2dd759-0914-823e-9f58-81e840cd0ddf" class="" dir="auto">
+</p><ol type="1" id="1c9dd759-0914-8278-8d10-8199fe990d0e" class="numbered-list" start="1" dir="auto"><li>지도에서 관심 있는 장소를 선택해 주세요.</li></ol><ol type="1" id="47bdd759-0914-8229-a1d2-8104cd48788b" class="numbered-list" start="2" dir="auto"><li>장소 상세 화면의 <mark class="highlight-blue" data-notion-highlight="blue">찜 버튼</mark>을 눌러주세요.</li></ol><ol type="1" id="4e1dd759-0914-837c-a6b6-0182eca86430" class="numbered-list" start="3" dir="auto"><li>찜한 장소는 저장되어 이후 다시 확인할 수 있어요.</li></ol><ol type="1" id="5b0dd759-0914-839f-9700-81f82599609c" class="numbered-list" start="4" dir="auto"><li>여행을 준비할 때 저장해둔 장소를 참고해 방문지를 결정할 수 있어요.</li></ol></div></details><details id="5f7dd759-0914-8297-89a4-8103ba083e27" open="" class="toggle" dir="auto"><summary>길찾기로 이동 방법 확인하기</summary><div class="indented"><p id="f68dd759-0914-82f9-9da5-8186b168e478" class="" dir="auto">방문하고 싶은 장소를 찾았다면<mark class="highlight-blue" data-notion-highlight="blue"> 길찾기 기능</mark>을 이용해 현재 위치에서 해당 장소까지의 이동 방법과 예상 소요 시간을 확인할 수 있어요.</p><p id="4d4dd759-0914-8204-b1c8-8147b0ca00e9" class="" dir="auto">담길의 길찾기는 <mark class="highlight-blue" data-notion-highlight="blue">카카오맵으로 이동하여 제공</mark>돼요. 담길에서 검색한 장소를 다시 입력할 필요 없이 카카오맵으로 연결하여 이동 경로를 확인할 수 있어요.</p><p id="3e4dd759-0914-8315-a910-8170a2fd92a7" class="" dir="auto">
+</p><p id="2c3dd759-0914-82c1-882f-81e38905ce7f" class="" dir="auto">[ 사용 방법 ]</p><ol type="1" id="b4ddd759-0914-820d-8035-811e70388c2d" class="numbered-list" start="1" dir="auto"><li>지도에서 방문하고 싶은 장소를 검색하거나 마커를 선택해 주세요.</li></ol><ol type="1" id="fc2dd759-0914-830f-827e-8195592d1274" class="numbered-list" start="2" dir="auto"><li>장소 상세정보에서 <mark class="highlight-blue" data-notion-highlight="blue">[ 길찾기 ]</mark> 버튼을 선택해 주세요.</li></ol><ol type="1" id="585dd759-0914-834b-b108-012c67713ca8" class="numbered-list" start="3" dir="auto"><li>카카오맵으로 이동하면 선택한 장소를 목적지로 한 길찾기 정보를 확인할 수 있어요.</li></ol><ol type="1" id="a5edd759-0914-835c-a7c9-01fb5d127097" class="numbered-list" start="4" dir="auto"><li>원하는 이동수단을 선택해 예상 경로와 소요 시간을 확인해 주세요.</li></ol><p id="0d8dd759-0914-83ed-8572-01212c6eaddd" class="" dir="auto">
+</p><ul id="464dd759-0914-82d6-8dc6-818ff5227d5a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">확인할 수 있는 이동 방법<ul id="567dd759-0914-83e7-962e-81114e6ff06e" class="bulleted-list" dir="auto"><li style="list-style-type:circle">🚗 자동차<ul id="e70dd759-0914-8359-aece-81942158f63d" class="bulleted-list" dir="auto"><li style="list-style-type:square">차량으로 이동할 때의 예상 경로와 소요 시간을 확인할 수 있어요.</li></ul></li></ul><ul id="789dd759-0914-8384-9546-8155d826a0e1" class="bulleted-list" dir="auto"><li style="list-style-type:circle">🚌 대중교통<ul id="dc7dd759-0914-83d0-a4ad-010332e55757" class="bulleted-list" dir="auto"><li style="list-style-type:square">버스·지하철 등 대중교통을 이용한 이동 경로와 예상 소요 시간을 확인할 수 있어요.</li></ul></li></ul><ul id="1bddd759-0914-829f-8cd6-814c180be806" class="bulleted-list" dir="auto"><li style="list-style-type:circle">🚶 도보<ul id="ea7dd759-0914-83dc-8c91-01fd1f236a05" class="bulleted-list" dir="auto"><li style="list-style-type:square">걸어서 이동할 경우의 경로와 예상 소요 시간을 확인할 수 있어요.</li></ul></li></ul><ul id="8ffdd759-0914-8286-93c6-01f1433d81f4" class="bulleted-list" dir="auto"><li style="list-style-type:circle">🚲 자전거<ul id="934dd759-0914-8299-9598-81eb52d6e261" class="bulleted-list" dir="auto"><li style="list-style-type:square">자전거를 이용할 경우의 이동 경로와 예상 소요 시간을 확인할 수 있어요.</li></ul><p id="52bdd759-0914-8315-916e-8141f2570921" class="" dir="auto">
+</p></li></ul></li></ul><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="4abdd759-0914-8364-b6a3-01fed51b55e5" dir="ltr"><div style="width:100%"><p id="1b9dd759-0914-8282-bb06-81751a931c51" class="" dir="auto">💡 이렇게 활용해보세요</p><p id="f05dd759-0914-827c-899d-81fe4c902274" class="" dir="auto">관심 있는 장소를 발견했다면 장소 정보와 관련 다이어리를 먼저 확인한 뒤, 길찾기를 이용해 실제 이동에 필요한 시간을 비교해보세요.</p></div></aside></div></details><p id="1a8dd759-0914-8249-bb0b-0162acee58fc" class="" dir="auto">
+</p></div></details><details id="e20dd759-0914-83fc-849e-014393d4911b" open="" class="toggle" dir="auto"><summary>👤 마이페이지</summary><div class="indented"><p id="b55dd759-0914-8324-8b63-814f6f66a394" class="" dir="auto">마이페이지에서는 <mark class="highlight-blue" data-notion-highlight="blue">내 계정 정보와 여행 콘텐츠를 관리</mark>하고, <mark class="highlight-blue" data-notion-highlight="blue">서비스 이용 중 필요한 사항을 관리자에게 전달</mark>할 수 있어요.</p><details id="577dd759-0914-839a-8280-8188687a2475" open="" class="toggle" dir="auto"><summary>내 정보 확인 및 수정하기</summary><div class="indented"><p id="12bdd759-0914-827b-a944-81f3704a0650" class="" dir="auto">프로필이나 계정 정보를 변경하고 싶을 때 이용해 주세요.</p><p id="174dd759-0914-8216-94f0-81ed68c0fafa" class="" dir="auto">
+</p><ol type="1" id="75edd759-0914-82cb-b556-01c2a47af956" class="numbered-list" start="1" dir="auto"><li>하단 네비게이션 바에서 <mark class="highlight-blue" data-notion-highlight="blue">마이페이지</mark>를 선택해 주세요.</li></ol><ol type="1" id="8b1dd759-0914-83fd-bc4a-815c04881c89" class="numbered-list" start="2" dir="auto"><li>내 프로필에서 [ <mark class="highlight-blue" data-notion-highlight="blue">프로필 편집하기 ]</mark>을 선택해 주세요.</li></ol><ol type="1" id="5ebdd759-0914-838a-8118-81baef82b1c0" class="numbered-list" start="3" dir="auto"><li>변경하고 싶은 정보를 수정해 주세요.</li></ol><ol type="1" id="ef3dd759-0914-824b-a82d-816f8aa2a10b" class="numbered-list" start="4" dir="auto"><li>내용을 확인한 뒤 저장하면 변경 사항이 적용돼요.</li></ol><p id="3dbdd759-0914-83f6-a360-01ebaf7f7c81" class="" dir="auto">
+</p></div></details><details id="7dedd759-0914-83d4-9d3f-81707b1f29d1" open="" class="toggle" dir="auto"><summary><mark class="highlight-default" data-notion-highlight="default">다이어리 관리하기</mark></summary><div class="indented"><p id="cecdd759-0914-829a-ac15-81d9ed73a0e6" class="" dir="auto">내가 만든 다이어리를 <mark class="highlight-blue" data-notion-highlight="blue">확인하거나 수정</mark>하고, 다른 사용자의 다이어리에 남긴 좋아요/댓글/저장 등의 활동을 관리할 수 있어요.</p><details id="439dd759-0914-8218-8c57-81599c22c90f" open="" class="toggle" dir="auto"><summary>내 다이어리 확인하기</summary><div class="indented"><p id="2e2dd759-0914-8363-a06e-01a2a63c85a8" class="" dir="auto">내가 지금까지 작성한 여행 다이어리를 한곳에서 확인할 수 있어요.</p><p id="dfddd759-0914-83a2-b663-810a0f54f0b2" class="" dir="auto">
+</p><p id="784dd759-0914-8309-af0e-8138bf2b6ec3" class="" dir="auto">[ 사용 방법 ]</p><ol type="1" id="cdbdd759-0914-82c0-9431-812b4782fc28" class="numbered-list" start="1" dir="auto"><li>하단 네비게이션 바에서 <mark class="highlight-blue" data-notion-highlight="blue">마이페이지</mark>를 선택해 주세요.</li></ol><ol type="1" id="c9edd759-0914-83cd-bdcb-81abac224ee1" class="numbered-list" start="2" dir="auto"><li><mark class="highlight-blue" data-notion-highlight="blue">[ 내 다이어리 ]</mark> 버튼을 선택해주세요.</li></ol><ol type="1" id="e98dd759-0914-82b8-b2da-8157c14f3775" class="numbered-list" start="3" dir="auto"><li>내가 작성한 여행 다이어리 목록을 확인해 주세요.</li></ol><ol type="1" id="dd2dd759-0914-823e-a543-019c3bb97015" class="numbered-list" start="4" dir="auto"><li>원하는 다이어리를 선택하면 상세 내용을 다시 확인할 수 있어요.</li></ol><p id="bd6dd759-0914-832e-8b8c-81a57ecbf8dc" class="" dir="auto">→ 다이어리를 통해 여행 당시 남긴 기록과 방문 장소 등을 다시 확인할 수 있어요.</p><p id="cfadd759-0914-8285-bb76-81637fa8149a" class="" dir="auto">
+</p></div></details><details id="caadd759-0914-8330-8c23-817174fd683d" open="" class="toggle" dir="auto"><summary>내 다이어리 수정하기</summary><div class="indented"><p id="d80dd759-0914-82ab-ac45-01693569108e" class="" dir="auto">작성한 다이어리의 내용을 변경하고 싶다면 다이어리를 선택해 수정할 수 있어요.</p><p id="68edd759-0914-8208-9a5a-8182ab6f2a4b" class="" dir="auto">
+</p><p id="fd0dd759-0914-83a6-9537-81beffda17a1" class="" dir="auto">[ 사용 방법 ]</p><ol type="1" id="0d8dd759-0914-82d5-bf3d-81d7a670d12b" class="numbered-list" start="1" dir="auto"><li><mark class="highlight-blue" data-notion-highlight="blue">[ 마이페이지 → 다이어리 ]</mark>로 이동해 주세요.</li></ol><ol type="1" id="496dd759-0914-83b4-9c1b-010f0dc03aa0" class="numbered-list" start="2" dir="auto"><li>수정하고 싶은 다이어리를 선택해 주세요.</li></ol><ol type="1" id="8c1dd759-0914-8362-bf93-81961e61ab5f" class="numbered-list" start="3" dir="auto"><li><mark class="highlight-blue" data-notion-highlight="blue">수정</mark> 기능을 선택해 주세요.</li></ol><ol type="1" id="bc4dd759-0914-8319-a142-81f8369f0ba3" class="numbered-list" start="4" dir="auto"><li>필요한 내용을 변경해 주세요.</li></ol><ol type="1" id="a5fdd759-0914-82e8-ab29-8135113358cb" class="numbered-list" start="5" dir="auto"><li>변경 내용을 저장하면 수정된 내용이 적용돼요.<p id="7bedd759-0914-82d9-b791-019736e4fbe9" class="" dir="auto">
+</p></li></ol></div></details><details id="3ebdd759-0914-833b-a2cd-812b3cff112d" open="" class="toggle" dir="auto"><summary>다이어리에 좋아요·댓글 남기기</summary><div class="indented"><p id="cd7dd759-0914-83ac-ad1a-015a3f4ea67b" class="" dir="auto">다른 사용자가 공개한 여행 다이어리를 보면서 <mark class="highlight-blue" data-notion-highlight="blue">마음에 드는 기록에 반응</mark>을 남길 수 있어요.</p><p id="559dd759-0914-828a-8424-01121f8c6d5f" class="" dir="auto">
+</p><ul id="a43dd759-0914-8222-a705-014ddfc66ab3" class="bulleted-list" dir="auto"><li style="list-style-type:disc">사용할 수 있는 기능<ul id="780dd759-0914-831b-8905-81ee119fb0da" class="bulleted-list" dir="auto"><li style="list-style-type:circle">좋아요<ul id="50edd759-0914-83db-8650-819a656c146e" class="bulleted-list" dir="auto"><li style="list-style-type:square">마음에 드는 여행 다이어리에 좋아요를 남길 수 있어요.</li></ul></li></ul><ul id="32fdd759-0914-8333-8df9-01a2fdc68c9c" class="bulleted-list" dir="auto"><li style="list-style-type:circle">댓글<ul id="205dd759-0914-831f-a8b1-81d6079b49bd" class="bulleted-list" dir="auto"><li style="list-style-type:square">다이어리에 대한 의견이나 궁금한 점을 댓글로 남길 수 있어요.</li></ul></li></ul><ul id="a15dd759-0914-8367-ac99-8109b68e3e0e" class="bulleted-list" dir="auto"><li style="list-style-type:circle">저장<ul id="de6dd759-0914-83ce-9e3f-0175f0ad8cfc" class="bulleted-list" dir="auto"><li style="list-style-type:square">다음 여행에 참고하고 싶은 다이어리를 저장해두고 나중에 다시 확인할 수 있어요.</li></ul></li></ul></li></ul><p id="2ffdd759-0914-8243-9eb7-0188838bb2a1" class="" dir="auto">
+</p><p id="951dd759-0914-8271-bd37-813c7665b772" class="" dir="auto">[ 사용 방법 ]</p><ol type="1" id="dd5dd759-0914-839b-87ce-0111f7255cfa" class="numbered-list" start="1" dir="auto"><li>다른 사용자의 다이어리를 선택해 주세요.</li></ol><ol type="1" id="b0edd759-0914-8252-84af-01d47934a5c8" class="numbered-list" start="2" dir="auto"><li>다이어리 상세 화면에서 원하는 기능을 선택해 주세요.</li></ol><ol type="1" id="3badd759-0914-82c5-9186-816b4db6f0be" class="numbered-list" start="3" dir="auto"><li><mark class="highlight-blue" data-notion-highlight="blue">좋아요 / 댓글 / 저장</mark>을 이용해 다이어리에 반응할 수 있어요.</li></ol><p id="f84dd759-0914-8391-abe9-8169447a8266" class="" dir="auto">
+</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="29cdd759-0914-8349-b3dc-81ebf0e3003e" dir="ltr"><div style="width:100%"><p id="e3ddd759-0914-83a4-a739-81d244336cf9" class="" dir="auto"><strong>💡</strong> 이렇게 활용해보세요</p><p id="3e0dd759-0914-825b-823e-81480aeaa77b" class="" dir="auto">여행 장소나 코스가 마음에 드는 다이어리를 저장해두면 다음 여행을 준비할 때 다시 참고할 수 있어요.</p></div></aside><p id="0c6dd759-0914-83d5-96d1-8187f46dc495" class="" dir="auto">
+</p></div></details><details id="fd2dd759-0914-83e0-a29e-81bc30772a34" open="" class="toggle" dir="auto"><summary>“좋아요”한 다이어리 확인하기</summary><div class="indented"><p id="bcddd759-0914-83a7-8716-01fe9cfea2d3" class="" dir="auto">다른 사용자의 다이어리를 보고 <mark class="highlight-blue" data-notion-highlight="blue">좋아요를 누른 기록을 마이페이지에서 다시 확인</mark>할 수 있어요.</p><p id="799dd759-0914-826f-bd4a-81c092ffc69f" class="" dir="auto">
+</p><p id="eaddd759-0914-8355-bc2f-819fc29b75a0" class="" dir="auto">[ 사용 방법 ]</p><ol type="1" id="a3bdd759-0914-8319-a331-01791b1af056" class="numbered-list" start="1" dir="auto"><li>하단 네비게이션 바에서 <mark class="highlight-blue" data-notion-highlight="blue">마이페이지</mark>를 선택해 주세요.</li></ol><ol type="1" id="d17dd759-0914-838e-858e-813223637b80" class="numbered-list" start="2" dir="auto"><li>다이어리 관련 메뉴에서<mark class="highlight-blue" data-notion-highlight="blue"> [ 좋아요 ]</mark>를 선택해 주세요.</li></ol><ol type="1" id="4bedd759-0914-82d7-a3a1-01b110b6b250" class="numbered-list" start="3" dir="auto"><li>내가 좋아요를 누른 다이어리 목록을 확인해 주세요.</li></ol><ol type="1" id="afadd759-0914-82af-84a6-81b59f1f4261" class="numbered-list" start="4" dir="auto"><li>다시 보고 싶은 다이어리를 선택하면 상세 내용을 확인할 수 있어요.</li></ol><p id="ce9dd759-0914-8308-a7e3-0146a00049ac" class="" dir="auto">
+</p><p id="9dfdd759-0914-8319-96cb-01a6eee6749e" class="" dir="auto">→ 이전에 관심 있게 보았던 여행 기록을 다시 찾아볼 수 있어요.</p></div></details><details id="901dd759-0914-8291-bbd5-81fda78c4bbd" open="" class="toggle" dir="auto"><summary>다이어리 공개 범위 변경하기</summary><div class="indented"><p id="67edd759-0914-83e2-873d-8158bdd84dae" class="" dir="auto">작성한 다이어리의 <mark class="highlight-blue" data-notion-highlight="blue">공개 여부를 변경</mark>할 수 있어요.</p><p id="305dd759-0914-8388-a02b-81074fa1e50e" class="" dir="auto">
+</p><p id="4f9dd759-0914-8366-8a82-013889cbfdc4" class="" dir="auto">[ 사용 방법 ]</p><ol type="1" id="131dd759-0914-82d0-b695-01c4f905b2c1" class="numbered-list" start="1" dir="auto"><li><mark class="highlight-blue" data-notion-highlight="blue">[ 마이페이지 → 다이어리 ]</mark>에서 변경할 다이어리를 선택해 주세요.</li></ol><ol type="1" id="115dd759-0914-820c-a027-01e316980a66" class="numbered-list" start="2" dir="auto"><li><mark class="highlight-blue" data-notion-highlight="blue">공개 범위 설정</mark>을 선택해 주세요.</li></ol><ol type="1" id="952dd759-0914-83ef-88a7-816e4151972f" class="numbered-list" start="3" dir="auto"><li>원하는 공개 범위를 선택해 주세요.</li></ol><ol type="1" id="dafdd759-0914-823d-9ff6-81c28c6ea2e5" class="numbered-list" start="4" dir="auto"><li>변경 내용을 저장하면 새로운 공개 범위가 적용돼요.</li></ol><p id="a81dd759-0914-83e3-adef-012b78bb0384" class="" dir="auto">
+</p><p id="62add759-0914-83d0-9b00-814672b783bc" class="" dir="auto"><strong>→ </strong><mark class="highlight-blue" data-notion-highlight="blue">공개 다이어리</mark>는 다른 사용자가 확인할 수 있고, <mark class="highlight-blue" data-notion-highlight="blue">비공개 다이어리</mark>는 다른 사용자에게 노출되지 않아요.</p><p id="cbcdd759-0914-83cd-b6d7-8115ddf6997f" class="" dir="auto">
+</p></div></details><details id="30edd759-0914-82f2-893d-81d16b9f0ed8" open="" class="toggle" dir="auto"><summary>다이어리 삭제하기</summary><div class="indented"><p id="fa4dd759-0914-82c7-9f83-01f7c1ecc58e" class="" dir="auto">더 이상 보관하지 않을 다이어리는 삭제할 수 있어요.</p><p id="453dd759-0914-83f3-9e57-8107ad0098f0" class="" dir="auto">
+</p><p id="8eedd759-0914-8336-881c-819079f048b6" class="" dir="auto">[ 사용 방법 ]</p><ol type="1" id="4cfdd759-0914-8202-95a9-0114ab7de2f3" class="numbered-list" start="1" dir="auto"><li><mark class="highlight-blue" data-notion-highlight="blue">마이페이지 → 다이어리</mark>에서 삭제할 다이어리를 선택해 주세요.</li></ol><ol type="1" id="8b6dd759-0914-82d4-b87f-01f40eee1bd8" class="numbered-list" start="2" dir="auto"><li>다이어리 관리 메뉴에서 <mark class="highlight-blue" data-notion-highlight="blue">삭제</mark>를 선택해 주세요.</li></ol><ol type="1" id="a32dd759-0914-8204-b068-81ea8dd28d14" class="numbered-list" start="3" dir="auto"><li>삭제 안내 내용을 확인해 주세요.</li></ol><ol type="1" id="3e9dd759-0914-83ef-a7d1-814e1fa0f709" class="numbered-list" start="4" dir="auto"><li>최종 확인을 선택하면 다이어리가 삭제돼요.</li></ol><p id="a70dd759-0914-8382-9b52-811957105ccb" class="" dir="auto">
+</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="bccdd759-0914-8358-83ac-0182948a7b91" dir="ltr"><div style="width:100%"><p id="385dd759-0914-83d4-8c28-81451ff9421e" class="" dir="auto"><strong>⚠️ </strong>확인해 주세요</p><p id="5c6dd759-0914-8329-964a-817f6ca26e78" class="" dir="auto">삭제된 다이어리는 복구가 어려울 수 있으므로, 삭제하기 전에 다시 한 번 내용을 확인해 주세요.</p></div></aside></div></details><p id="65edd759-0914-825f-848c-013d3a0955d8" class="" dir="auto">
+</p></div></details><details id="8c6dd759-0914-8362-b3a6-81e3ac66e8b6" open="" class="toggle" dir="auto"><summary>⚙️ 설정<br/>설정에서는 담길 이용에 필요한 <mark class="highlight-blue" data-notion-highlight="blue">서비스 정보와 계정 관련 설정</mark>을 확인할 수 있어요.</summary><div class="indented"><figure id="9cddd759-0914-8293-8f89-818fb7cd45f3" class="image" data-notion-image="%EB%8B%B4%EA%B8%B8%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C/Group_3416.png" dir="ltr"><a href="%EB%8B%B4%EA%B8%B8%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C/Group_3416.png"><img style="width:3740px" src="%EB%8B%B4%EA%B8%B8%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C/Group_3416.png"/></a></figure><details id="9efdd759-0914-8282-b20f-8144db2a0894" open="" class="toggle" dir="auto"><summary>피드백 보내기</summary><div class="indented"><p id="873dd759-0914-82d1-a8f0-8116fa83e20d" class="" dir="auto">서비스를 이용하면서 불편한 점이나 개선됐으면 하는 기능이 있다면 <mark class="highlight-blue" data-notion-highlight="blue">관리자에게 의견을 전달</mark>할 수 있어요.</p><p id="f73dd759-0914-82f4-a1b0-01a563133720" class="" dir="auto">
+</p><ol type="1" id="41add759-0914-82f4-a199-01af6003ed4b" class="numbered-list" start="1" dir="auto"><li>마이페이지에서 상단의 설정 버튼을 누른 뒤, <mark class="highlight-blue" data-notion-highlight="blue">피드백 보내기</mark>를 선택해 주세요.</li></ol><ol type="1" id="e5cdd759-0914-83a2-9f0a-813a55840cc7" class="numbered-list" start="2" dir="auto"><li>관리자에게 전달할 내용을 작성해 주세요.</li></ol><ol type="1" id="384dd759-0914-83fa-bbac-81fcbfd7cb59" class="numbered-list" start="3" dir="auto"><li>작성한 내용을 확인한 뒤 <mark class="highlight-blue" data-notion-highlight="blue">전송</mark>해 주세요.</li></ol><ol type="1" id="ea3dd759-0914-8305-ae0a-815b7e974a0b" class="numbered-list" start="4" dir="auto"><li>전달된 의견은 서비스 오류 확인 및 향후 기능 개선에 활용돼요.</li></ol><p id="4b3dd759-0914-8365-9a34-8108380df5e9" class="" dir="auto">
+</p><ul id="839dd759-0914-82e4-8042-8138070f8adb" class="bulleted-list" dir="auto"><li style="list-style-type:disc">이런 경우 이용해주세요.<ul id="cabdd759-0914-824d-897f-01c039e3d491" class="bulleted-list" dir="auto"><li style="list-style-type:circle">앱을 이용하는 중 문제가 발생한 경우</li></ul><ul id="abadd759-0914-8231-b4c1-817ea231f749" class="bulleted-list" dir="auto"><li style="list-style-type:circle">정상적으로 동작하지 않는 기능이 있는 경우</li></ul><ul id="4ecdd759-0914-827d-9575-0146aa8c3c66" class="bulleted-list" dir="auto"><li style="list-style-type:circle">추가됐으면 하는 기능이 있는 경우</li></ul><ul id="ed1dd759-0914-82c0-9c92-81dff1310b42" class="bulleted-list" dir="auto"><li style="list-style-type:circle">서비스 이용 중 불편한 부분이 있는 경우</li></ul><ul id="f5add759-0914-82a3-806a-816f2549d6b9" class="bulleted-list" dir="auto"><li style="list-style-type:circle">기타 관리자에게 전달하고 싶은 내용이 있는 경우</li></ul></li></ul><p id="2b8dd759-0914-8399-8c6c-810fe81fbdb7" class="" dir="auto">
+</p></div></details><details id="45edd759-0914-83f9-a09e-017d9f46a252" open="" class="toggle" dir="auto"><summary>사용 가이드 확인하기</summary><div class="indented"><p id="8a6dd759-0914-82ed-93fc-81a357ec11cc" class="" dir="auto">담길의 기능을 처음 사용하거나 사용 방법이 궁금하다면 <mark class="highlight-blue" data-notion-highlight="blue">언제든 사용 가이드를 확인</mark>할 수 있어요.</p><p id="076dd759-0914-83f8-8a2c-81341c17d27f" class="" dir="auto">
+</p><ol type="1" id="a24dd759-0914-836c-b148-81e5ef89983c" class="numbered-list" start="1" dir="auto"><li>마이페이지에서 상단의 설정 버튼을 누른 뒤, <mark class="highlight-blue" data-notion-highlight="blue">사용 가이드</mark>를 선택해 주세요.</li></ol><ol type="1" id="119dd759-0914-83ff-8506-01b8faa1f241" class="numbered-list" start="2" dir="auto"><li>여행 다이어리, 검색, 지도, 마이페이지 등 원하는 카테고리를 선택해 주세요.</li></ol><ol type="1" id="da4dd759-0914-8239-a8d8-81b9d1059a01" class="numbered-list" start="3" dir="auto"><li>궁금한 기능의 사용 방법을 확인해 주세요.</li></ol><p id="41ddd759-0914-8240-9e03-0178f4b5881b" class="" dir="auto">
+</p></div></details><details id="34fdd759-0914-82e4-b98d-0183cc6587b7" open="" class="toggle" dir="auto"><summary>이용약관 및 개인정보 관련 내용 확인하기</summary><div class="indented"><p id="53cdd759-0914-8206-ad30-81991faf6d19" class="" dir="auto">담길의 <mark class="highlight-blue" data-notion-highlight="blue">서비스 이용과 개인정보 처리에 관한 내용을 확인</mark>할 수 있어요.</p><p id="a8ddd759-0914-820a-bb6e-814c8bd6072b" class="" dir="auto">
+</p><ol type="1" id="fe3dd759-0914-83e1-9321-81944acc9628" class="numbered-list" start="1" dir="auto"><li>설정 화면에서 확인하고 싶은 항목을 선택해 주세요.</li></ol><ol type="1" id="294dd759-0914-8367-b26c-01568d14fd9d" class="numbered-list" start="2" dir="auto"><li>해당 정책 및 안내 내용을 확인해 주세요.</li></ol><p id="d6ddd759-0914-83df-bbcc-813c93ec27dd" class="" dir="auto">
+</p><ul id="90ddd759-0914-834a-b3a8-81ca13f00736" class="bulleted-list" dir="auto"><li style="list-style-type:disc">확인 가능한 내용<ul id="417dd759-0914-82cb-93e4-8145e0030abb" class="bulleted-list" dir="auto"><li style="list-style-type:circle">서비스 이용약관</li></ul><ul id="014dd759-0914-8383-ad05-01dc88e04244" class="bulleted-list" dir="auto"><li style="list-style-type:circle">개인정보처리방침</li></ul><ul id="fd1dd759-0914-838c-b72e-0185dc3944ac" class="bulleted-list" dir="auto"><li style="list-style-type:circle">위치정보 관련 안내</li></ul></li></ul><p id="250dd759-0914-8352-bb20-81a22a8fc0fa" class="" dir="auto">
+</p></div></details><details id="0b5dd759-0914-8230-b668-81b0c97e524d" open="" class="toggle" dir="auto"><summary>회원 탈퇴하기</summary><div class="indented"><p id="fa5dd759-0914-820e-a880-810df9f86d57" class="" dir="auto">담길을 더 이상 이용하지 않는 경우 <mark class="highlight-blue" data-notion-highlight="blue">계정을 탈퇴</mark>할 수 있어요.</p><p id="a35dd759-0914-8278-8d00-0150b2113fde" class="" dir="auto">
+</p><ol type="1" id="b30dd759-0914-8308-af41-016e0127522a" class="numbered-list" start="1" dir="auto"><li>설정 화면에서 <mark class="highlight-blue" data-notion-highlight="blue">회원탈퇴</mark>를 선택해 주세요.</li></ol><ol type="1" id="888dd759-0914-83fd-9c93-01e38e4c4ceb" class="numbered-list" start="2" dir="auto"><li>회원탈퇴 시 처리되는 정보를 확인해 주세요.</li></ol><ol type="1" id="f52dd759-0914-822b-958b-012e50d73a46" class="numbered-list" start="3" dir="auto"><li>안내사항을 충분히 확인한 뒤 탈퇴 여부를 선택해 주세요.</li></ol><ol type="1" id="750dd759-0914-82cd-ada5-8162b3a131b5" class="numbered-list" start="4" dir="auto"><li>최종 확인 후 회원탈퇴가 진행돼요.</li></ol><p id="ab8dd759-0914-8336-90cc-81b433c4d79b" class="" dir="auto">
+</p><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="2f0dd759-0914-822b-ab44-81ab61f67301" dir="ltr"><div style="width:100%"><p id="d84dd759-0914-83df-b520-81f62f90f7b2" class="" dir="auto"><strong>⚠️ </strong>주의해 주세요.</p><p id="f10dd759-0914-83c9-a256-01e52100aebd" class="" dir="auto">회원탈퇴 시 작성한 여행 기록이나 계정과 연결된 데이터가 삭제되거나 더 이상 이용할 수 없을 수 있으므로, 반드시 탈퇴 안내 내용을 확인한 뒤 진행해 주세요.</p></div></aside><p id="2d7dd759-0914-837c-b2bb-014ddfed7dd6" class="" dir="auto">
+</p></div></details></div></details><p id="22cdd759-0914-82ba-9646-81984c65d099" class="" dir="auto">
+</p></div></details><p id="21ddd759-0914-839e-9d7c-0116d3984531" class="" dir="auto">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
